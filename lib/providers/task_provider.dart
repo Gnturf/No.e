@@ -34,6 +34,10 @@ final activeTaskProvider = Provider((ref) {
     return true;
   }).toList();
 
+  taskList.sort((a, b) {
+    return a.deadline.compareTo(b.deadline);
+  });
+
   return taskList;
 });
 

@@ -5,6 +5,7 @@ const uuid = Uuid();
 class Task {
   Task({
     required this.title,
+    required this.desc,
     required this.createdAt,
     required this.deadline,
     this.isFinished = false,
@@ -13,6 +14,7 @@ class Task {
 
   final String id;
   final String title;
+  final String desc;
   final DateTime createdAt;
   final DateTime deadline;
   bool isFinished;

@@ -5,6 +5,22 @@ class Time {
     return currentTime;
   }
 
+  DateTime get endOfTheDayTime {
+    var day = currTime.day;
+    var month = currTime.month;
+    var year = currTime.year;
+
+    return DateTime(year, month, day, 23, 59, 59);
+  }
+
+  DateTime get tomorrowTime {
+    return currentTime.add(const Duration(days: 1));
+  }
+
+  DateTime get nextWeekTime {
+    return currentTime.add(const Duration(days: 7));
+  }
+
   String get customDay {
     if (currentTime.day > 9) {
       return "${currentTime.day}";

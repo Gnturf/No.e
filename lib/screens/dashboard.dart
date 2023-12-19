@@ -23,21 +23,15 @@ class DashboardScreen extends StatelessWidget {
           )
         ],
       ),
-      drawer: const Drawer(
-        child: SingleChildScrollView(
-          child: Column(
+      drawer: SafeArea(
+        child: Drawer(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0),
+          ),
+          backgroundColor: Theme.of(context).colorScheme.background,
+          child: const Column(
             children: [
-              SizedBox(
-                height: 100,
-                width: double.infinity,
-                child: DrawerHeader(
-                  decoration: BoxDecoration(color: Colors.blueGrey),
-                  child: Text('No_e'),
-                ),
-              ),
-              ListTile(
-                title: Text('Task'),
-              ),
+              Text('data'),
             ],
           ),
         ),
@@ -55,12 +49,8 @@ class DashboardScreen extends StatelessWidget {
             ),
             context: context,
             builder: (ctx) {
-              return Container(
-                padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: TaskInputScreen(
-                  modalContext: ctx,
-                ),
+              return TaskInputScreen(
+                modalContext: ctx,
               );
             },
           );

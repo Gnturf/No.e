@@ -41,7 +41,7 @@ class QuickCardEmpty extends StatelessWidget {
 
     return DottedBorder(
       color: Theme.of(context).colorScheme.primaryContainer,
-      dashPattern: [6, 3],
+      dashPattern: const [6, 3],
       borderType: BorderType.RRect,
       radius: const Radius.circular(20),
       padding: const EdgeInsets.all(0),
@@ -50,13 +50,13 @@ class QuickCardEmpty extends StatelessWidget {
         child: GestureDetector(
           onTap: () {
             showModalBottomSheet(
+              isScrollControlled: true,
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
               ),
-              useSafeArea: true,
               context: context,
               builder: (ctx) {
                 return TaskInputScreen(

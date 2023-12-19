@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData().copyWith(
-        useMaterial3: true,
+      theme: ThemeData.light().copyWith(
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color.fromRGBO(94, 119, 225, 1),
           primary: const Color.fromRGBO(0, 0, 0, 0.60),

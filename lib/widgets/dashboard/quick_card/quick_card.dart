@@ -44,14 +44,15 @@ class QuickCard extends ConsumerWidget {
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
           ),
-          Text(
-            'Final Project',
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                  color: Theme.of(context).colorScheme.onPrimaryContainer,
-                ),
-          ),
+          // Project Category
+          // Text(
+          //   'Final Project',
+          //   maxLines: 1,
+          //   overflow: TextOverflow.ellipsis,
+          //   style: Theme.of(context).textTheme.labelMedium!.copyWith(
+          //         color: Theme.of(context).colorScheme.onPrimaryContainer,
+          //       ),
+          // ),
           Align(
             alignment: Alignment.bottomRight,
             child: IconButton(
