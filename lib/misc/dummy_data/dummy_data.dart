@@ -11,6 +11,7 @@ const user = User(
 final taskDummy = <Task>[
   // Task(
   //   title: 'Creating Wireframe',
+  //   desc: "Lorem Ipsum",
   //   createdAt: DateTime.now(),
   //   deadline: DateTime(2023, 12, 15),
   //   isFinished: false,

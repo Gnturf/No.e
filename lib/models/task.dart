@@ -10,7 +10,8 @@ class Task {
     required this.deadline,
     this.isFinished = false,
     this.finishedAt,
-  }) : id = uuid.v4();
+    String? id,
+  }) : id = id ?? uuid.v4();
 
   final String id;
   final String title;

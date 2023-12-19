@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:no_e/misc/dummy_data/dummy_data.dart';
 import 'package:no_e/models/task.dart';
+import 'package:no_e/providers/time_provider.dart';
 
 final taskProvider = StateNotifierProvider<TaskNotifier, List<Task>>((ref) {
   return TaskNotifier();
@@ -46,6 +47,21 @@ final completedTaskProvider = Provider((ref) {
 
   final taskList = tasks.where((task) {
     if (task.isFinished) {
+      return true;
+    }
+
+    return false;
+  }).toList();
+
+  return taskList;
+});
+
+final missedTaskProvider = Provider((ref) {
+  final tasks = ref.watch(taskProvider);
+  final time = ref.watch(timeProvider);
+
+  final taskList = tasks.where((task) {
+    if (!task.isFinished && task.deadline.compareTo(time.currTime) < 0) {
       return true;
     }
 
